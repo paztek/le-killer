@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="backend" type="CompoundRunConfigurationType">
+    <toRun name="frontend:start" type="js.build_tools.npm" />
+    <toRun name="frontend:tests:watch" type="JavaScriptTestRunnerJest" />
+    <method v="2" />
+  </configuration>
+</component>
