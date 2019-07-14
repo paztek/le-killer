@@ -1,0 +1,5 @@
+# Files that should not or don't need to be part of the Docker context
+
+node_modules
+dist
+*.iml

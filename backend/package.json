@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node .",
-    "start:dev": "npm run build && node .",
+    "start:dev": "npm run build && npm start",
     "start:watch": "ts-node-dev src/index.ts",
     "test": "jest"
   },

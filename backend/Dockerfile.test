@@ -1,0 +1,12 @@
+# Build
+FROM node:alpine
+
+WORKDIR /app
+
+COPY . /app
+
+# Install app dependencies
+RUN yarn
+
+# Tests
+CMD yarn test

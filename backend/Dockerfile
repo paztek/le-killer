@@ -1,5 +1,5 @@
 # Build
-FROM node as build
+FROM node:alpine as build
 
 WORKDIR /app
 
@@ -12,7 +12,7 @@ RUN yarn
 RUN yarn build
 
 # Run
-FROM node
+FROM node:alpine
 
 WORKDIR /app
 

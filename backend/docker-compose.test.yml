@@ -1,0 +1,15 @@
+version: '3'
+services:
+  db:
+    image: mongo:latest
+    ports:
+      - 27017
+
+  test:
+    build:
+      context: ./
+      dockerfile: Dockerfile.test
+    links:
+      - db
+    environment:
+      - NODE_ENV=test
