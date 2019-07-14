@@ -1,14 +1,12 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="backend:start" type="js.build_tools.npm">
+  <configuration default="false" name="backend:start:watch" type="js.build_tools.npm">
     <package-json value="$PROJECT_DIR$/backend/package.json" />
     <command value="run" />
     <scripts>
-      <script value="start:dev" />
+      <script value="start:watch" />
     </scripts>
     <node-interpreter value="project" />
-    <envs>
-      <env name="NODE_ENV" value="development" />
-    </envs>
+    <envs />
     <method v="2" />
   </configuration>
 </component>
