@@ -7,32 +7,40 @@ node {
             checkout scm
         }
 
-        dir('backend') {
-            stage('backend:test') {
-                sh "echo backend:test"
+        stage('backend:test') {
+            sh "echo backend:test"
+
+            dir('backend') {
                 ansiColor('xterm') {
                     sh "docker-compose -f docker-compose.test.yml up --renew-anon-volumes --force-recreate --abort-on-container-exit --exit-code-from test"
                 }
             }
+        }
 
-            stage('backend:build') {
-                sh "echo backend:build"
+        stage('backend:build') {
+            sh "echo backend:build"
+
+            dir('backend') {
                 ansiColor('xterm') {
                     backend = docker.build('le-killer/backend:${ENVIRONMENT}')
                 }
             }
         }
 
-        dir('frontend') {
-            stage('frontend:test') {
-                sh "echo frontend:test"
+        stage('frontend:test') {
+            sh "echo frontend:test"
+
+            dir('frontend') {
                 ansiColor('xterm') {
                     sh "docker-compose -f docker-compose.test.yml up --renew-anon-volumes --force-recreate --abort-on-container-exit --exit-code-from test"
                 }
             }
+        }
 
-            stage('frontend:build') {
-                sh "echo frontend:build"
+        stage('frontend:build') {
+            sh "echo frontend:build"
+
+            dir('frontend') {
                 ansiColor('xterm') {
                     frontend = docker.build('le-killer/frontend:${ENVIRONMENT}')
                 }
