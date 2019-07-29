@@ -22,7 +22,7 @@ node {
 
             dir('backend') {
                 ansiColor('xterm') {
-                    backend = docker.build('le-killer/backend:${ENVIRONMENT}')
+                    sh "docker build . -t le-killer/backend:${ENVIRONMENT}"
                 }
             }
         }
@@ -42,7 +42,7 @@ node {
 
             dir('frontend') {
                 ansiColor('xterm') {
-                    frontend = docker.build('le-killer/frontend:${ENVIRONMENT}')
+                    sh "docker build . -t le-killer/frontend:${ENVIRONMENT}"
                 }
             }
         }
