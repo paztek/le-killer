@@ -21,10 +21,8 @@ node {
             sh "echo backend:build"
 
             dir('backend') {
-                withTool('docker') {
-                    ansiColor('xterm') {
-                        backend = docker.build('le-killer/backend:${ENVIRONMENT}')
-                    }
+                ansiColor('xterm') {
+                    backend = docker.build('le-killer/backend:${ENVIRONMENT}')
                 }
             }
         }
@@ -43,10 +41,8 @@ node {
             sh "echo frontend:build"
 
             dir('frontend') {
-                withTool('docker') {
-                    ansiColor('xterm') {
-                        frontend = docker.build('le-killer/frontend:${ENVIRONMENT}')
-                    }
+                ansiColor('xterm') {
+                    frontend = docker.build('le-killer/frontend:${ENVIRONMENT}')
                 }
             }
         }
